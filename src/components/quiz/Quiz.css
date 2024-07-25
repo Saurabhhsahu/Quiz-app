@@ -1,0 +1,96 @@
+.container{
+    width: 450px;
+    background-color: white;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
+    margin: auto;
+    gap: 10px;
+    border-radius: 10px;
+    color: #262626;
+    height: 500px;
+    /* margin-top: 150px; */
+
+}
+.result{
+    width: 450px;
+    background-color: white;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: auto;
+    gap: 10px;
+    border-radius: 10px;
+    color: #262626;
+}
+
+.container hr{
+    height: 2px;
+    border: none;
+    background-color: #707070;
+}
+
+.container h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.container ul li{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 15px;
+    border: 1px solid #686868;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container button{
+    margin: auto;
+    padding: 10px 30px;
+    background-color: rgb(115, 133, 234);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+}
+
+.container .index{
+    margin: auto;
+    font-size: 16px;
+}
+
+.container .correct{
+    background: #dffff2;
+    border-color: #00d397;
+}
+
+.container .wrong{
+    background: #FFEBEB;
+    border-color: #ff4a4a;
+}
+
+.time {
+    width: 50px;      /* Adjust size as needed */
+    height: 50px;     /* Adjust size as needed */
+    border-radius: 50%;
+    background-color: rgb(115, 133, 234); /* Tomato color, adjust as needed */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;  /* Adjust font size as needed */
+    font-weight: bold;
+    border: 2px solid #fff; /* Optional: add a white border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a slight shadow */
+    position: absolute; /* Positioning it at the top right corner */
+    top: 20px;
+    right: 20px;
+}
