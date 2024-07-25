@@ -61,7 +61,7 @@ export const Quiz = () => {
     const checkAns = (e, ans) => {
         if (!lock) {
             if (question.ans === ans) {
-                setScore(prev => prev + 1);
+                setScore(prev => prev + time);
                 e.target.classList.add("correct");
             } else {
                 e.target.classList.add("wrong");
@@ -74,29 +74,34 @@ export const Quiz = () => {
     };
 
     return (
-        <div className={result ? "result" : "container"}>
-            <h1 style={{ textAlign: "center" }}>Quiz App</h1>
-            <hr />
-            {
-                result ? 
-                <div>
-                    <h2 style={{ textAlign: "center" }}>Your score is: {score}</h2>
-                </div> :
-                <>
-                    <div className='time'>{time}</div>
-                    <h2>{index + 1}. {question.question} </h2>
-                    <ul>
-                        <li ref={el => optionRefs.current[0] = el} onClick={(e) => { checkAns(e, 1) }}>{question.option1}</li>
-                        <li ref={el => optionRefs.current[1] = el} onClick={(e) => { checkAns(e, 2) }}>{question.option2}</li>
-                        <li ref={el => optionRefs.current[2] = el} onClick={(e) => { checkAns(e, 3) }}>{question.option3}</li>
-                        <li ref={el => optionRefs.current[3] = el} onClick={(e) => { checkAns(e, 4) }}>{question.option4}</li>
-                    </ul>
-                    <button onClick={handleNext}>
-                        {buttonContent}
-                    </button>
-                    <div className="index">{index + 1} of {data.length} question</div>
-                </>
-            }
+        <div className="main-container">
+            <div className={result ? "result" : "container"}>
+                <h1 style={{ textAlign: "center" }}>Quiz App</h1>
+                <hr />
+                {
+                    result ? 
+                    <div>
+                        <h2 style={{ textAlign: "center" }}>Your score is: {score}/{10*data.length}</h2>
+                    </div> :
+                    <> 
+                        <div style={{display:'flex', justifyContent:'space-between',alignItems:'center',gap:'10px'}}>
+                            <h2>{index + 1}. {question.question} </h2>
+                            <div className='time'>{time}</div>
+                        </div>
+                        
+                        <ul>
+                            <li ref={el => optionRefs.current[0] = el} onClick={(e) => { checkAns(e, 1) }}>{question.option1}</li>
+                            <li ref={el => optionRefs.current[1] = el} onClick={(e) => { checkAns(e, 2) }}>{question.option2}</li>
+                            <li ref={el => optionRefs.current[2] = el} onClick={(e) => { checkAns(e, 3) }}>{question.option3}</li>
+                            <li ref={el => optionRefs.current[3] = el} onClick={(e) => { checkAns(e, 4) }}>{question.option4}</li>
+                        </ul>
+                        <button onClick={handleNext}>
+                            {buttonContent}
+                        </button>
+                        <div className="index">{index + 1} of {data.length} question</div>
+                    </>
+                }
+            </div>
         </div>
     );
 };

@@ -1,3 +1,10 @@
+.main-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container{
     width: 450px;
     background-color: white;
@@ -14,6 +21,15 @@
     /* margin-top: 150px; */
 
 }
+
+@media (max-width: 600px) {
+    .container {
+        padding: 40px;
+        width: 70%;
+        margin: 30px;
+    }
+}
+
 .result{
     width: 450px;
     background-color: white;
@@ -90,7 +106,4 @@
     font-weight: bold;
     border: 2px solid #fff; /* Optional: add a white border */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a slight shadow */
-    position: absolute; /* Positioning it at the top right corner */
-    top: 20px;
-    right: 20px;
 }
